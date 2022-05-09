@@ -1,0 +1,13 @@
+{
+  "name": "ng-multi-level-menu",
+  "version": "0.0.1",
+  "description": "A simple multi level collapsable menu",
+  "author":"Bhagesh Kalekar",
+  "peerDependencies": {
+    "@angular/common": "^11.0.9",
+    "@angular/core": "^11.0.9"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

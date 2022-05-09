@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngxMultiMenu",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ngx-multi-menu",
+      "kebab-case"
+    ]
+  }
+}

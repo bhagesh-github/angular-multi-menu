@@ -1,0 +1,25 @@
+<ul class="ngx-multi-menu" *ngIf="items && items.length">
+    <li *ngFor="let item of items; let i = index">
+        <div class="ngx-multi-menu-link-header">
+            <span *ngIf="!item.link" class="ngx-multi-menu-nolink">
+                <span class="ngx-multi-menu-link-icon" *ngIf="item.icon" [innerHTML]="item.icon"></span>
+                <span class="ngx-multi-menu-label">{{item?.name}}</span>
+            </span>
+            <a class="ngx-multi-menu-link" *ngIf="item.link" [routerLink]="item.link">
+                <span class="ngx-multi-menu-link-icon" *ngIf="item.icon" [innerHTML]="item.icon"></span>
+                <span class="ngx-multi-menu-label">{{item?.name}}</span>
+            </a>
+            <div class="ngx-multi-menu-arrow" *ngIf="item.subItems && item.subItems.length" (click)="onClick(item)">
+                <div class="ngx-multi-menu-arrow-triangle"
+                    [ngClass]="{'ngx-multi-menu-arrow-right':!item.expanded, 'ngx-multi-menu-arrow-down':item.expanded}">
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="item.expanded">
+            <ng-container *ngIf="item.subItems && item.subItems.length">
+                <ngx-multi-menu-NgMultiLevelMenu [items]="item.subItems" [expanded]="isExpanded">
+                </ngx-multi-menu-NgMultiLevelMenu>
+            </ng-container>
+        </ng-container>
+    </li>
+</ul>
